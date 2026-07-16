@@ -1,0 +1,16 @@
+<!-- ===== GALLERY ===== -->
+<section id="gallery" style="padding:clamp(70px,9vw,130px) clamp(18px,5vw,80px);background:#0B0B0C">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="max-width:640px;margin-bottom:clamp(36px,5vw,56px)">
+      <div style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E6B94E;margin-bottom:14px">Inside The Club</div>
+      <h2 style="font-family:'Bebas Neue';font-weight:400;font-size:clamp(38px,5.5vw,66px);line-height:.98;margin:0;text-transform:uppercase">The Arya Gallery</h2>
+    </div>
+    <div style="columns:360px;column-gap:16px" data-gallery>
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="0">
+        <div style="break-inside:avoid;margin-bottom:16px;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,.06)" onClick="{{ g.open }}">
+          <img src="{{ g.img }}" alt="Arya Fitness gallery" style="width:100%;display:block;transition:transform .55s ease" style-hover="transform:scale(1.06)">
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>\n

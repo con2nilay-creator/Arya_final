@@ -1,0 +1,30 @@
+<!-- ===== WHY CHOOSE + COUNTERS ===== -->
+<section style="position:relative;padding:clamp(70px,9vw,130px) clamp(18px,5vw,80px);background-image:linear-gradient(rgba(11,11,12,.9),rgba(11,11,12,.92)),url('assets/dark-wide.webp');background-size:cover;background-position:center;background-attachment:{{ parallaxAttach }}">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="text-align:center;margin-bottom:clamp(40px,5vw,60px)">
+      <div style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E6B94E;margin-bottom:14px">Why Choose Arya</div>
+      <h2 style="font-family:'Bebas Neue';font-weight:400;font-size:clamp(38px,5.5vw,66px);line-height:.98;margin:0;text-transform:uppercase">Built Different. Built To Last.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:clamp(44px,5vw,64px)">
+      <sc-for list="{{ whyChoose }}" as="w" hint-placeholder-count="4">
+        <div data-reveal style="padding:28px 24px;background:rgba(19,19,22,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.07);border-radius:14px;text-align:center;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(230,185,78,.4);transform:translateY(-5px)">
+          <div style="width:52px;height:52px;margin:0 auto 16px;border-radius:13px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(229,57,53,.18),rgba(230,185,78,.18));border:1px solid rgba(230,185,78,.3)">
+            <span style="width:14px;height:14px;transform:rotate(45deg);background:linear-gradient(135deg,#E53935,#E6B94E)"></span>
+          </div>
+          <h3 style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;margin:0;text-transform:uppercase;color:#F4F2EE">{{ w.title }}</h3>
+          <p style="font-size:13.5px;line-height:1.6;color:#A2A09C;margin:8px 0 0">{{ w.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:20px;padding:36px clamp(20px,4vw,48px);background:rgba(230,185,78,.05);border:1px solid rgba(230,185,78,.18);border-radius:18px">
+      <sc-for list="{{ counters }}" as="c" hint-placeholder-count="4">
+        <div style="text-align:center">
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:2px;font-family:'Anton';font-size:clamp(38px,4.5vw,58px);line-height:1;background:linear-gradient(90deg,#E53935,#E6B94E);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">
+            <span data-counter data-value="{{ c.value }}" data-decimals="{{ c.decimals }}" data-suffix="{{ c.suffix }}">{{ c.display }}</span>
+          </div>
+          <div style="font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:#B4B2AE;margin-top:8px">{{ c.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>\n

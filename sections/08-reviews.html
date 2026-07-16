@@ -1,0 +1,23 @@
+<!-- ===== TESTIMONIALS ===== -->
+<section id="reviews" style="position:relative;padding:clamp(70px,9vw,130px) clamp(18px,5vw,80px);background:#0F0F11;border-top:1px solid rgba(255,255,255,.05);overflow:hidden">
+  <div style="max-width:960px;margin:0 auto;text-align:center">
+    <div style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E6B94E;margin-bottom:14px">What Members Say</div>
+    <h2 style="font-family:'Bebas Neue';font-weight:400;font-size:clamp(38px,5.5vw,60px);line-height:.98;margin:0 0 44px;text-transform:uppercase">Loved By The Community</h2>
+    <div style="overflow:hidden;border-radius:18px">
+      <div style="display:flex;transition:transform .6s cubic-bezier(.7,0,.2,1);transform:{{ tShift }}">
+        <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+          <div style="min-width:100%;padding:clamp(30px,5vw,56px);box-sizing:border-box">
+            <div style="color:#E6B94E;font-size:22px;letter-spacing:4px;margin-bottom:22px">★★★★★</div>
+            <p style="font-family:'Inter';font-size:clamp(18px,2.6vw,27px);line-height:1.5;color:#EAE8E4;margin:0;font-weight:500">“{{ tm.quote }}”</p>
+            <div style="font-family:'Bebas Neue';font-size:20px;letter-spacing:1.5px;color:#9C9A96;margin-top:26px">{{ tm.name }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:28px">
+      <sc-for list="{{ testimonials }}" as="tm" hint-placeholder-count="3">
+        <button onClick="{{ tm.go }}" aria-label="Review" style="width:{{ tm.dotW }};height:9px;border-radius:100px;border:none;cursor:pointer;background:{{ tm.dotBg }};transition:all .3s"></button>
+      </sc-for>
+    </div>
+  </div>
+</section>\n

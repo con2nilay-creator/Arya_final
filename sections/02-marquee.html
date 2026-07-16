@@ -1,0 +1,8 @@
+<!-- ===== MOTIVATION MARQUEE ===== -->
+<div style="position:relative;z-index:3;overflow:hidden;background:linear-gradient(90deg,#E53935,#F07A2E,#E6B94E);padding:15px 0;box-shadow:0 18px 50px rgba(0,0,0,.45)">
+  <div style="display:flex;width:max-content;animation:marquee 28s linear infinite;will-change:transform">
+    <sc-for list="{{ marqueeWords }}" as="mw" hint-placeholder-count="8">
+      <span style="display:flex;align-items:center;gap:34px;padding:0 17px;white-space:nowrap;font-family:'Anton';font-size:clamp(17px,2.2vw,26px);letter-spacing:2.5px;color:#0B0B0C;text-transform:uppercase">{{ mw }}<span style="width:10px;height:10px;transform:rotate(45deg);background:#0B0B0C;opacity:.8"></span></span>
+    </sc-for>
+  </div>
+</div>\n

@@ -1,0 +1,61 @@
+<!-- ===== CONTACT ===== -->
+<section id="contact" style="padding:clamp(70px,9vw,130px) clamp(18px,5vw,80px);background:#0B0B0C">
+  <div style="max-width:1240px;margin:0 auto">
+    <div data-reveal style="margin-bottom:clamp(36px,5vw,56px);max-width:600px">
+      <div style="font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E6B94E;margin-bottom:14px">Get In Touch</div>
+      <h2 style="font-family:'Bebas Neue';font-weight:400;font-size:clamp(38px,5.5vw,66px);line-height:.98;margin:0;text-transform:uppercase">Start Today</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:28px">
+      <div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);height:260px">
+          <iframe title="Arya Fitness location" src="https://www.google.com/maps?q=2445%2BGX+Panvel+Maharashtra&output=embed" style="width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05)" loading="lazy"></iframe>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:24px">
+          <sc-for list="{{ contactInfo }}" as="ci" hint-placeholder-count="3">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <span style="width:38px;height:38px;flex-shrink:0;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(230,185,78,.12);border:1px solid rgba(230,185,78,.3)"><span style="width:11px;height:11px;transform:rotate(45deg);background:linear-gradient(135deg,#E53935,#E6B94E)"></span></span>
+              <div>
+                <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8A8884">{{ ci.label }}</div>
+                <div style="font-size:15px;color:#EAE8E4;margin-top:3px;line-height:1.5;white-space:pre-line">{{ ci.value }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="margin-top:24px;padding:22px 24px;border-radius:14px;background:linear-gradient(180deg,#1B1712,#131316);border:1.5px solid rgba(230,185,78,.4)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="width:9px;height:9px;border-radius:50%;background:#E6B94E;box-shadow:0 0 10px #E6B94E"></span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E6B94E">Sunday Open House · 6–9 PM</span>
+          </div>
+          <p style="font-size:15px;line-height:1.6;color:#EAE8E4;margin:0">Curious about Arya? Drop in any Sunday between 6 and 9 PM — no membership required.</p>
+        </div>
+      </div>
+      <div style="background:#131316;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:clamp(24px,3vw,36px)">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:340px">
+            <div style="width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#E53935,#E6B94E);display:flex;align-items:center;justify-content:center;font-size:34px;color:#0B0B0C;margin-bottom:20px">✓</div>
+            <h3 style="font-family:'Bebas Neue';font-size:32px;letter-spacing:1px;margin:0;text-transform:uppercase">You're In!</h3>
+            <p style="font-size:15px;color:#A2A09C;margin:10px 0 0;max-width:32ch">Thanks for reaching out. Our team will call you shortly to lock in your free trial.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:15px">
+            <input required placeholder="Full Name" style="background:#0F0F11;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:#F4F2EE;font-size:15px;outline:none" style-focus="border-color:#E6B94E">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <input required placeholder="Phone" style="background:#0F0F11;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:#F4F2EE;font-size:15px;outline:none;min-width:0" style-focus="border-color:#E6B94E">
+              <input placeholder="Email" type="email" style="background:#0F0F11;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:#F4F2EE;font-size:15px;outline:none;min-width:0" style-focus="border-color:#E6B94E">
+            </div>
+            <select required style="background:#0F0F11;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:#F4F2EE;font-size:15px;outline:none" style-focus="border-color:#E6B94E">
+              <option value="" style="background:#131316">Your Goal</option>
+              <option style="background:#131316">Weight Loss</option>
+              <option style="background:#131316">Muscle Gain</option>
+              <option style="background:#131316">General Fitness</option>
+              <option style="background:#131316">Personal Training</option>
+            </select>
+            <textarea placeholder="Message (optional)" rows="4" style="background:#0F0F11;border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:#F4F2EE;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#E6B94E"></textarea>
+            <button type="submit" style="font-family:'Bebas Neue';font-size:22px;letter-spacing:1.5px;color:#0B0B0C;padding:16px;border:none;border-radius:10px;background:linear-gradient(90deg,#E53935,#E6B94E);cursor:pointer;box-shadow:0 12px 30px rgba(229,57,53,.3);transition:transform .2s" style-hover="transform:translateY(-2px)">BOOK MY FREE TRIAL</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>\n
